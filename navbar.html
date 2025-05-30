@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+          *{
+          margin: 0px;
+          padding: 0px;
+          box-sizing: border-box;
+           }
+           .navbar{
+               height: 80px;
+               width: 100%;
+               background-color: rgb(7, 37, 56);
+               display: flex;
+               color: white;
+               justify-content: space-around;
+               align-items: center;
+           }
+           .navbar ul{
+               display: flex;
+               gap: 25px;
+               list-style:none;
+           }
+           .navbar button{
+               padding: 8px 22px;
+               background-color: rgb(7, 37, 56);
+               color: white;
+               border: 2px solid rgb(181, 218, 244);
+               border-radius: 10px;
+               font-size: 16px;
+           }
+           .section{
+               height: calc(100vh - 80px);
+               width: 100%;
+               background-color: rgb(7, 37, 56);
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               gap: 15px;
+           }
+           .section .content{
+               height: 80%;
+               width: 45%;
+               padding: 50px 100px;
+               color: white;
+           }
+           .content h4{
+               margin-bottom: 25px;
+           }
+           .content h1{
+               margin-bottom: 15px;
+               font-size: 45px;
+           }
+           .content p{
+               margin-bottom: 15px;
+
+           }
+           .content button{
+               padding: 10px 25px;
+               color: white;
+               border: 2px solid white;
+               background-color: transparent;
+               font-size: 17px;
+               border-radius: 10px;
+           }
+           .section .image{
+               height: 80%;
+               width: 45%;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+           }
+           .image img{
+               border-radius: 15px;
+           }
+     </style>
+</head>
+<body>
+     <div class="navbar">
+          <h1>Sage University</h1>
+          <ul>
+               <a href="./flex.html"><li>Home</li></a>
+               <li>About</li>
+               <li>Contact</li>
+               <li>Services</li>
+               <li>Blog</li>
+          </ul>
+          <button>Login</button>
+     </div>
+
+     <div class="section">
+          <div class="content">
+               <h4>Welcome to sage university</h4>
+               <h1>In your city best college</h1>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nisi alias cum aperiam. Amet, obcaecati deserunt quis, modi sunt, perspiciatis quibusdam officiis numquam unde enim repudiandae minus laudantium? Totam, quam.</p>
+              <a href="./login.html"><button>Admission Now</button></a>
+          </div>
+          <div class="image">
+               <img src="https://t4.ftcdn.net/jpg/03/45/56/61/360_F_345566184_ZLFzMopvQbJdAYLn9kW8zEqoOjH5Eemd.jpg" alt="">
+          </div>
+     </div>
+</body>
+</html>

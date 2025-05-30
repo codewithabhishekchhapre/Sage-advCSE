@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>AI Solutions - NextGen Intelligence</title>
+     <style>
+          :root {
+               --primary: #11998e; /* Green gradient start */
+               --primary2: #38ef7d; /* Green gradient end */
+               --accent: #43e97b; /* Accent green */
+               --bg: #f5f8fa;
+               --text: #222;
+               --card: #fff;
+               --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+          }
+
+          * {
+               box-sizing: border-box;
+               margin: 0;
+               padding: 0;
+          }
+
+          body {
+               font-family: 'Segoe UI', Arial, sans-serif;
+               background: var(--bg);
+               color: var(--text);
+          }
+
+          a {
+               text-decoration: none;
+               color: inherit;
+          }
+
+          .navbar {
+               width: 100%;
+               background: linear-gradient(90deg, var(--primary), var(--primary2));
+               color: #fff;
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               padding: 0 2rem;
+               height: 70px;
+               position: sticky;
+               top: 0;
+               z-index: 10;
+          }
+
+          .navbar .logo {
+               font-size: 2rem;
+               font-weight: bold;
+               letter-spacing: 2px;
+          }
+
+          .navbar ul {
+               display: flex;
+               gap: 2rem;
+               list-style: none;
+          }
+
+          .navbar ul li {
+               transition: color 0.2s;
+               cursor: pointer;
+          }
+
+          .navbar ul li:hover {
+               color: var(--accent);
+          }
+
+          .navbar .nav-btn {
+               background: var(--accent);
+               color: #fff;
+               border: none;
+               padding: 0.5rem 1.5rem;
+               border-radius: 8px;
+               font-size: 1rem;
+               cursor: pointer;
+               transition: background 0.2s;
+          }
+
+          .navbar .nav-btn:hover {
+               background: #11998e;
+          }
+
+          /* Hero Section */
+          .hero {
+               display: flex;
+               flex-wrap: wrap;
+               align-items: center;
+               justify-content: center;
+               min-height: 90vh;
+               background: linear-gradient(90deg, var(--primary) 60%, var(--primary2) 100%);
+               padding: 2rem 0;
+          }
+
+          .hero-left {
+               flex: 1 1 350px;
+               color: #fff;
+               padding: 2rem 3rem;
+               min-width: 320px;
+          }
+
+          .hero-left h1 {
+               font-size: 2.8rem;
+               font-weight: bold;
+               margin-bottom: 1rem;
+          }
+
+          .hero-left p {
+               font-size: 1.2rem;
+               margin-bottom: 2rem;
+               line-height: 1.6;
+          }
+
+          .hero-left .cta-btn {
+               background: var(--accent);
+               color: #fff;
+               border: none;
+               padding: 0.8rem 2.2rem;
+               border-radius: 8px;
+               font-size: 1.1rem;
+               font-weight: 500;
+               cursor: pointer;
+               box-shadow: var(--shadow);
+               transition: background 0.2s;
+          }
+
+          .hero-left .cta-btn:hover {
+               background: #11998e;
+          }
+
+          .hero-right {
+               flex: 1 1 350px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               min-width: 320px;
+               padding: 2rem 3rem;
+          }
+
+          .login-card {
+               background: var(--card);
+               box-shadow: var(--shadow);
+               border-radius: 16px;
+               padding: 2.5rem 2rem;
+               width: 100%;
+               max-width: 350px;
+          }
+
+          .login-card h2 {
+               color: var(--primary);
+               margin-bottom: 1.2rem;
+               font-size: 1.5rem;
+          }
+
+          .login-card input {
+               width: 100%;
+               padding: 0.7rem;
+               margin-bottom: 1rem;
+               border: 1.5px solid #d1d5db;
+               border-radius: 6px;
+               font-size: 1rem;
+          }
+
+          .login-card button {
+               width: 100%;
+               background: var(--accent);
+               color: #fff;
+               border: none;
+               padding: 0.7rem;
+               border-radius: 6px;
+               font-size: 1.1rem;
+               font-weight: 500;
+               cursor: pointer;
+               transition: background 0.2s;
+          }
+
+          .login-card button:hover {
+               background: #11998e;
+          }
+
+          /* Pricing Section */
+          .pricing-section {
+               background: var(--bg);
+               padding: 4rem 1rem 2rem 1rem;
+               text-align: center;
+          }
+
+          .pricing-section h2 {
+               font-size: 2.2rem;
+               color: var(--primary);
+               margin-bottom: 1.5rem;
+          }
+
+          .pricing-cards {
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: center;
+               gap: 2rem;
+               margin-top: 2rem;
+          }
+
+          .pricing-card {
+               background: var(--card);
+               box-shadow: var(--shadow);
+               border-radius: 16px;
+               padding: 2.5rem 2rem;
+               min-width: 260px;
+               max-width: 320px;
+               flex: 1 1 260px;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               transition: transform 0.2s, box-shadow 0.2s;
+          }
+
+          .pricing-card:hover {
+               transform: translateY(-8px) scale(1.03);
+               box-shadow: 0 8px 32px rgba(79, 140, 255, 0.15);
+          }
+
+          .pricing-card h3 {
+               color: var(--primary);
+               font-size: 1.3rem;
+               margin-bottom: 0.7rem;
+          }
+
+          .pricing-card .price {
+               font-size: 2.1rem;
+               color: var(--accent);
+               margin-bottom: 1rem;
+               font-weight: bold;
+          }
+
+          .pricing-card ul {
+               list-style: none;
+               margin-bottom: 1.5rem;
+          }
+
+          .pricing-card ul li {
+               margin-bottom: 0.5rem;
+               font-size: 1rem;
+          }
+
+          .pricing-card button {
+               background: var(--accent);
+               color: #fff;
+               border: none;
+               padding: 0.7rem 2rem;
+               border-radius: 8px;
+               font-size: 1rem;
+               font-weight: 500;
+               cursor: pointer;
+               transition: background 0.2s;
+          }
+
+          .pricing-card button:hover {
+               background: #11998e;
+          }
+
+          /* Testimonial Section */
+          .testimonial-section {
+               background: #e8f0fe;
+               padding: 4rem 1rem 2rem 1rem;
+               text-align: center;
+          }
+
+          .testimonial-section h2 {
+               font-size: 2.2rem;
+               color: var(--primary);
+               margin-bottom: 2rem;
+          }
+
+          .testimonials {
+               display: flex;
+               flex-wrap: wrap;
+               justify-content: center;
+               gap: 2rem;
+          }
+
+          .testimonial {
+               background: var(--card);
+               box-shadow: var(--shadow);
+               border-radius: 16px;
+               padding: 2rem 1.5rem;
+               max-width: 340px;
+               min-width: 240px;
+               flex: 1 1 240px;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+          }
+
+          .testimonial img {
+               width: 64px;
+               height: 64px;
+               border-radius: 50%;
+               object-fit: cover;
+               margin-bottom: 1rem;
+               border: 3px solid var(--accent);
+          }
+
+          .testimonial p {
+               font-size: 1.05rem;
+               margin-bottom: 1rem;
+               color: #444;
+          }
+
+          .testimonial .name {
+               font-weight: bold;
+               color: var(--primary);
+          }
+
+          .testimonial .role {
+               font-size: 0.95rem;
+               color: #666;
+          }
+
+          /* Footer */
+          .footer {
+               background: linear-gradient(90deg, var(--primary), var(--primary2));
+               color: #fff;
+               text-align: center;
+               padding: 2rem 1rem 1rem 1rem;
+               margin-top: 2rem;
+          }
+
+          .footer .footer-links {
+               margin-bottom: 1rem;
+          }
+
+          .footer .footer-links a {
+               color: #fff;
+               margin: 0 1rem;
+               font-size: 1rem;
+               opacity: 0.8;
+               transition: opacity 0.2s;
+          }
+
+          .footer .footer-links a:hover {
+               opacity: 1;
+               color: var(--accent);
+          }
+
+          .footer p {
+               font-size: 1rem;
+               opacity: 0.8;
+          }
+
+          /* Responsive */
+          @media (max-width: 900px) {
+               .hero {
+                    flex-direction: column;
+                    padding: 2rem 0;
+               }
+
+               .hero-left,
+               .hero-right {
+                    padding: 2rem 1rem;
+               }
+
+               .pricing-cards,
+               .testimonials {
+                    flex-direction: column;
+                    gap: 1.5rem;
+               }
+          }
+
+          @media (max-width: 600px) {
+               .navbar {
+                    flex-direction: column;
+                    height: auto;
+                    padding: 1rem;
+               }
+
+               .navbar ul {
+                    flex-direction: column;
+                    gap: 1rem;
+                    margin: 1rem 0;
+               }
+
+               .hero-left h1 {
+                    font-size: 2rem;
+               }
+
+               .pricing-section h2,
+               .testimonial-section h2 {
+                    font-size: 1.5rem;
+               }
+          }
+     </style>
+</head>
+
+<body>
+     <!-- Navbar -->
+     <nav class="navbar">
+          <div class="logo">AI Solutions</div>
+          <ul>
+               <li><a href="#hero">Home</a></li>
+               <li><a href="#pricing">Pricing</a></li>
+               <li><a href="#testimonials">Testimonials</a></li>
+               <li><a href="#footer">Contact</a></li>
+          </ul>
+          <button class="nav-btn" onclick="document.getElementById('login-email').focus()">Login</button>
+     </nav>
+     <!-- Hero Section -->
+     <section class="hero" id="hero">
+          <div class="hero-left">
+               <h1>Empowering the Future with AI</h1>
+               <p>Discover the next generation of artificial intelligence solutions for your business. Automate,
+                    analyze, and accelerate your growth with our cutting-edge AI platform.</p>
+               <button class="cta-btn"
+                    onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">See
+                    Pricing</button>
+          </div>
+          <div class="hero-right">
+               <form class="login-card" onsubmit="login(event)">
+                    <h2>Login to AI Solutions</h2>
+                    <input id="login-email" type="email" placeholder="Email address" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+               </form>
+          </div>
+     </section>
+     <!-- Pricing Section -->
+     <section class="pricing-section" id="pricing">
+          <h2>Simple, Transparent Pricing</h2>
+          <div class="pricing-cards">
+               <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">Free</div>
+                    <ul>
+                         <li>Basic AI Tools</li>
+                         <li>Community Support</li>
+                         <li>Single User</li>
+                    </ul>
+                    <button>Get Started</button>
+               </div>
+               <div class="pricing-card" style="border:2px solid var(--accent)">
+                    <h3>Pro</h3>
+                    <div class="price">$29<span style="font-size:1rem;font-weight:400">/mo</span></div>
+                    <ul>
+                         <li>All Starter Features</li>
+                         <li>Advanced Analytics</li>
+                         <li>Priority Support</li>
+                         <li>Up to 5 Users</li>
+                    </ul>
+                    <button>Start Pro</button>
+               </div>
+               <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <ul>
+                         <li>All Pro Features</li>
+                         <li>Dedicated AI Consultant</li>
+                         <li>Unlimited Users</li>
+                    </ul>
+                    <button>Contact Sales</button>
+               </div>
+          </div>
+     </section>
+     <!-- Testimonial Section -->
+     <section class="testimonial-section" id="testimonials">
+          <h2>What Our Clients Say</h2>
+          <div class="testimonials">
+               <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1">
+                    <p>"AI Solutions transformed our workflow. The automation tools are intuitive and powerful!"</p>
+                    <div class="name">Rahul Sharma</div>
+                    <div class="role">CTO, TechNova</div>
+               </div>
+               <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client 2">
+                    <p>"The analytics dashboard gives us insights we never thought possible. Highly recommended!"</p>
+                    <div class="name">Priya Verma</div>
+                    <div class="role">Product Manager, DataGen</div>
+               </div>
+               <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Client 3">
+                    <p>"Excellent support and innovative features. Our business is growing faster than ever."</p>
+                    <div class="name">Amit Patel</div>
+                    <div class="role">CEO, InnovateX</div>
+               </div>
+          </div>
+     </section>
+     <!-- Footer -->
+     <footer class="footer" id="footer">
+          <div class="footer-links">
+               <a href="#hero">Home</a>|
+               <a href="#pricing">Pricing</a>|
+               <a href="#testimonials">Testimonials</a>|
+               <a href="mailto:info@aisolutions.com">Email</a>
+          </div>
+          <p>&copy; 2024 AI Solutions. All rights reserved.</p>
+     </footer>
+     <script>
+          // Simple login form handler (demo only)
+          function login(event) {
+               event.preventDefault();
+               const email = document.getElementById('login-email').value;
+               alert('Welcome, ' + email + '! (Demo login)');
+          }
+     </script>
+</body>
+
+</html>
